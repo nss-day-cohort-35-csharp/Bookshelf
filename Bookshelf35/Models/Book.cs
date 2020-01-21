@@ -10,6 +10,8 @@ namespace Bookshelf35.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
+
+        [Display(Name = "Author")]
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
