@@ -1,4 +1,4 @@
-﻿@model Bookshelf35.Models.Book
+﻿@model Bookshelf35.Models.ViewModels.BookViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -19,7 +19,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="AuthorId" class="control-label"></label>
-                <select asp-for="AuthorId" class ="form-control" asp-items="ViewBag.AuthorId"></select>
+                <select asp-for="AuthorId" class="form-control" asp-items="ViewBag.AuthorId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="GenreIds" class="control-label"></label>
+                <select multiple asp-for="GenreIds" class="form-control" asp-items="ViewBag.Genres"></select>
             </div>
             <div class="form-group">
                 <label asp-for="YearPublished" class="control-label"></label>
@@ -30,11 +34,6 @@
                 <label asp-for="Rating" class="control-label"></label>
                 <input asp-for="Rating" class="form-control" />
                 <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Genre" class="control-label"></label>
-                <input asp-for="Genre" class="form-control" />
-                <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
